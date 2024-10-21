@@ -91,22 +91,6 @@ def train_epoch(model, loader, criterion, optimizer, lr_scheduler, epoch, use_cu
 
         if use_cuda:
             data = data.cuda()
-            #data = np.reshape(data, (-1, 2))
-            #scaler = StandardScaler()
-            #data = torch.from_numpy(scaler.fit_transform(data.cpu()))
-            #m, n = np.shape(data)
-            #m = int(m/1922)
-            #print(m, n)
-            #data = data.reshape([m, 62, 62])
-            #if m == 246016:
-            #    data = data.reshape([128, 62, 62])
-            #if m == 172980:
-            #    data = data.reshape([90, 62, 62])
-            #if m == 174902:
-            #    data = data.reshape([91, 62, 62])
-            #if m == 211420:
-            #    data = data.reshape([110, 62, 62])
-            #data = torch.tensor(data, dtype=torch.float).cuda()
             mask = mask.cuda()
             if pe is not None:
                 pe = pe.cuda()
